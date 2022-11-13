@@ -7,11 +7,6 @@ from .helper import api_builder
 
 app = FastAPI()
 
-class Item(BaseModel):
-    name: str
-    price: float
-    is_offer: Union[bool, None] = None
-
 # Index
 @app.get("/", status_code=200)
 def status(response: Response):
@@ -22,6 +17,12 @@ def status(response: Response):
 def predict(response: Response):
     result = ["Tahu", "ini", 2]
     return api_builder.builder(result, response.status_code)
+
+# --------------------------------------------------------------------------------------------------------------------
+class Item(BaseModel):
+    name: str
+    price: float
+    is_offer: Union[bool, None] = None
 
 # Example Path params & Query
 @app.get("/items/{item_id}", status_code=200)
