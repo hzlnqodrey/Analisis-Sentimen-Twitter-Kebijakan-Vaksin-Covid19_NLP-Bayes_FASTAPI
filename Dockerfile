@@ -8,3 +8,5 @@ RUN pip install --no-cache-dir --default-timeout=1000 --upgrade -r /src/requirem
 
 COPY ./app /src/app
 
+# RUN Server with uvicorn
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "9000"]
