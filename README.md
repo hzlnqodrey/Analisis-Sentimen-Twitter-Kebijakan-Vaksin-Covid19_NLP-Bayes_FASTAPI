@@ -15,3 +15,6 @@ Analisis Sentimen Twitter Vaksin Covid19 dengan Algoritma NLP and Naive Bayes. P
 |----------------= API DOCS =-------------------|:-------:|
 | [SwaggerUI](https://swagger.io/tools/swagger-ui/)|  OAS3  |
 | [Postman](https://www.postman.com/)    |  10.2.2 |
+
+## **API Documentation with Swagger**
+Here (Open)[https://app.swaggerhub.com/apis-docs/HAZLANQODRI2020WORK_1/Analisis-Sentimen-Twitter-Kebijakan-Vaksin-Covid19_FASTAPI/1.1.0]
