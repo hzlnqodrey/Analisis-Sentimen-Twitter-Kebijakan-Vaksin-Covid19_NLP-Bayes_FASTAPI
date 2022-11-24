@@ -5,12 +5,12 @@ Analisis Sentimen Twitter Vaksin Covid19 dengan Algoritma NLP and Naive Bayes. P
 
 | Stack                                         | Version |
 |-----------------------------------------------|:-------:|
-|----------------= BACKEND APP =----------------|:-------:|
+|----------------= [BACKEND APP](https://github.com/hzlnqodrey/Analisis-Sentimen-Twitter-Kebijakan-Vaksin-Covid19_NLP-Bayes_FASTAPI) =----------------|:-------:|
 | [Python](https://www.python.org/)             |   3.8   |
 | [Nginx](https://www.nginx.com/)               | 1.14.0  |
 | [Docker](https://www.nginx.com/)              |20.10.12 |
 | [FastAPI](https://fastapi.tiangolo.com/)      | 0.80.0  |
-|----------------= FRONTEND APP =---------------|:-------:|
+|----------------= [FRONTEND APP](https://github.com/hzlnqodrey/sentiment-analysis-twitter-fe) =---------------|:-------:|
 | [TypeScript](https://www.python.org/)         |  4.8.4  |
 | [Tailwind](https://www.npmjs.com/package/tailwindcss)|  3.2.4  |
 | [NextJS](https://www.npmjs.com/package/next)    |  13.0.3 |
