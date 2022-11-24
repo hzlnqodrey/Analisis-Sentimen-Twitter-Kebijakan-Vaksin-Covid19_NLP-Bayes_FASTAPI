@@ -18,7 +18,17 @@ def status(response: Response):
 # Predict
 @app.get("/predict", status_code=200)
 def predict(response: Response):
-    data = pd.read_csv('new_hasil_klasifikasi_naive_bayes_data_tweet_8k.csv')
+    # fetch data
+    data = pd.read_csv('./app/data/new_hasil_klasifikasi_naive_bayes_data_tweet_8k.csv')
+    # fetch text_asli
+    data2 = pd.read_csv('./app/data/tweets_covid_dataset_50k_raw_noindex.csv', engine='python')
+    data2.drop(['Tanggal', 'Username'], axis=1, inplace=True)
+    data2[data2.isna().any(axis=1)]
+    data2 = data2.drop(labels=16413, axis=0) # drop null data
+    data2 = data2.drop(data2.index[8000:], axis=0) # trim to 8k data
+
+    # insert text column data2 to data
+    data.insert(0, column="Text_Asli", value=data2['Text'])
 
     result = []
     # text_clean = text_english = nlp = bayes = []
