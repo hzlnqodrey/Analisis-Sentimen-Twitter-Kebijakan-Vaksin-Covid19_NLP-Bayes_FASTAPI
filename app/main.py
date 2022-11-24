@@ -3,7 +3,6 @@ from typing import Union
 from fastapi import FastAPI, Response, Request
 from pydantic import BaseModel
 import pandas as pd
-import os
 
 # Import local module
 from .helper import api_builder
