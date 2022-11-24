@@ -1,3 +1,4 @@
+import uvicorn
 from typing import Union
 from fastapi import FastAPI, Response, Request
 from pydantic import BaseModel
@@ -5,7 +6,7 @@ from pydantic import BaseModel
 # Import local module
 from .helper import api_builder
 
-app = FastAPI()
+app = FastAPI(debug=True)
 
 # Index
 @app.get("/", status_code=200)
@@ -46,3 +47,10 @@ def update_item(response: Response, item_id: int, item: Item):
     })
 
     return api_builder.builder(result, response.status_code)
+
+# --------------------------------------------------------------------------------------------------------------------
+
+### Debugging
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port="9000")
+
