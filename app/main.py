@@ -2,6 +2,8 @@ import uvicorn
 from typing import Union
 from fastapi import FastAPI, Response, Request
 from pydantic import BaseModel
+import pandas as pd
+import os
 
 # Import local module
 from .helper import api_builder
@@ -16,7 +18,15 @@ def status(response: Response):
 # Predict
 @app.get("/predict", status_code=200)
 def predict(response: Response):
-    result = ["Tahu", "ini", 2]
+    data = pd.read_csv('hasil_klasifikasi_naive_bayes_data_tweet_8k.csv')
+
+    result = []
+    # text_clean = text_english = nlp = bayes = []
+    
+    for index, row in list(data.iterrows()):
+        result.append(row)
+
+
     return api_builder.builder(result, response.status_code)
 
 # --------------------------------------------------------------------------------------------------------------------
