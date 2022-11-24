@@ -18,7 +18,7 @@ def status(response: Response):
 # Predict
 @app.get("/predict", status_code=200)
 def predict(response: Response):
-    data = pd.read_csv('hasil_klasifikasi_naive_bayes_data_tweet_8k.csv')
+    data = pd.read_csv('new_hasil_klasifikasi_naive_bayes_data_tweet_8k.csv')
 
     result = []
     # text_clean = text_english = nlp = bayes = []
