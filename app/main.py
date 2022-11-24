@@ -36,6 +36,33 @@ def predict(response: Response):
     for index, row in list(data.iterrows()):
         result.append(row)
 
+    return api_builder.builder(result, response.status_code)
+
+# Get NLP classification conclusion
+@app.get("/predict/NLP_Result", status_code=200)
+def predict_nlpResult(response: Response):
+
+    result = []
+
+    result.append({
+        "Positif": 3206,
+        "Netral": 2832,
+        "Negatif": 1962
+    })
+
+    return api_builder.builder(result, response.status_code)
+
+# Get NLP classification conclusion
+@app.get("/predict/Bayes_Result", status_code=200)
+def predict_bayesResult(response: Response):
+
+    result = []
+
+    result.append({
+        "Positif": 2953,
+        "Netral": 3304,
+        "Negatif": 1743
+    })
 
     return api_builder.builder(result, response.status_code)
 
