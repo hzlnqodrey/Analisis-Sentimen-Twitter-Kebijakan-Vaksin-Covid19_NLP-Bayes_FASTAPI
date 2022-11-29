@@ -3,11 +3,19 @@ from typing import Union
 from fastapi import FastAPI, Response, Request
 from pydantic import BaseModel
 import pandas as pd
+from fastapi.middleware.cors import CORSMiddleware
 
 # Import local module
 from .helper import api_builder
 
 app = FastAPI(debug=True)
+
+origins = [
+    "http://localhost.tiangolo.com",
+    "https://localhost.tiangolo.com",
+    "http://localhost",
+    "http://localhost:8080",
+]
 
 # Index
 @app.get("/", status_code=200)
